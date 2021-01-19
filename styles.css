@@ -3,6 +3,10 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+@font-face {
+  font-family: NotoSansJP;
+  src: url(NotoSansJP-Regular.otf);
+}
 
 /*
  * -- BASE STYLES --
@@ -12,8 +16,8 @@ body {
     line-height: 1.7em;
     color: #7f8c8d;
     font-size: 13px;
+    align-content: center;
     font-family: NotoSansJP;
-    src: "NotoSansJP-Regular.otf"
 }
 
 h1,
@@ -25,7 +29,6 @@ h6,
 label {
     color: #34495e;
     font-family: NotoSansJP;
-    src: "NotoSansJP-Regular.otf"
 }
 
 .pure-img-responsive {
@@ -61,7 +64,6 @@ label {
     font-weight: bold;
     font-size: 100%;
     font-family: NotoSansJP;
-    src: url(NotoSansJP-Regular.otf)
 }
 
 .pure-form input[type] {
@@ -71,7 +73,6 @@ label {
     width: 100%;
     margin-bottom: 1em;
     font-family: NotoSansJP;
-    src: url(NotoSansJP-Regular.otf)
 }
 
 /*
@@ -91,7 +92,6 @@ a.pure-button-primary {
     border-radius: 5px;
     font-size: 120%;
     font-family: NotoSansJP;
-    src: url(NotoSansJP-Regular.otf)
 }
 
 
