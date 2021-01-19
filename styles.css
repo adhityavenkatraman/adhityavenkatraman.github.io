@@ -218,6 +218,11 @@ a.pure-button-primary {
     text-align: center;
 }
 
+.content-text-ribbon {
+    color: white;
+    text-align: center;
+}
+
 /* This is the class used for the content sub-headers (<h3>) */
 .content-subhead {
     color: #1f8dd6;
@@ -227,7 +232,6 @@ a.pure-button-primary {
 .ribbon {
     background: #2d3e50;
     color: #aaa;
-    text-align: center;
 }
 
 /* This is the class used for the footer */
