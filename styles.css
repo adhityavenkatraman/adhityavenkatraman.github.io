@@ -12,7 +12,7 @@
  * -- BASE STYLES --
  * Most of these are inherited from Base, but I want to change a few.
  */
-p {
+body {
     line-height: 1.7em;
     color: #7f8c8d;
     font-size: 13px;
@@ -20,6 +20,7 @@ p {
     font-family: NotoSansJP;
 }
 
+p,
 h1,
 h2,
 h3,
