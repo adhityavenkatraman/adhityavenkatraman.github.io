@@ -165,7 +165,7 @@ a.pure-button-primary {
 
 /* This is the main heading that appears on the blue section */
 .splash-head {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: bold;
     color: white;
     border: 3px solid white;
@@ -180,6 +180,7 @@ a.pure-button-primary {
     color: white;
     letter-spacing: 0.05em;
     opacity: 0.8;
+    font-size: 18px;
 }
 
 /*
