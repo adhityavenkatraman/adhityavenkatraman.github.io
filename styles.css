@@ -20,7 +20,6 @@ body {
     font-family: NotoSansJP;
 }
 
-p,
 h1,
 h2,
 h3,
@@ -228,7 +227,7 @@ a.pure-button-primary {
 .ribbon {
     background: #2d3e50;
     color: #aaa;
-    align-content: center;
+    text-align: center;
 }
 
 /* This is the class used for the footer */
