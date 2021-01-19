@@ -208,7 +208,7 @@ a.pure-button-primary {
     font-weight: 400;
     letter-spacing: 0.1em;
     margin: 2em 0 1em;
-    text-transfom: uppercase;
+    text-transfom: capitalize;
 }
 
 /* This is a modifier class used when the content-head is inside a ribbon */
