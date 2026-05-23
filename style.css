@@ -1,0 +1,484 @@
+/* =====================================================
+   ADHITYA VENKATRAMAN — Personal Site
+   Palette: parchment + olive greens
+   ===================================================== */
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+:root {
+  --cream:        #F5EFE0;
+  --cream-alt:    #EDE5CF;
+  --parchment:    #D9CEAF;
+  --olive:        #5C6B3E;
+  --olive-mid:    #7A8C5A;
+  --olive-light:  #A8B88A;
+  --olive-pale:   #DCE8C8;
+  --ink:          #22280F;
+  --ink-mid:      #3D4F2A;
+  --ink-light:    #6B7A52;
+  --rule:         rgba(92,107,62,0.18);
+  --max-w:        860px;
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: 'Lora', Georgia, serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#bg-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero-photo {
+  width: 130px;
+  height: 130px;
+  border-radius: 2px;
+  overflow: hidden;
+  border: 0.5px solid var(--rule);
+  background: var(--cream-alt);
+}
+
+/* To use a real photo: replace the SVG in .hero-photo div with:
+   <img src="your-photo.jpg" alt="Adhitya Venkatraman" style="width:100%;height:100%;object-fit:cover;"> */
+
+.photo-placeholder {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-name-block h1 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  line-height: 1.1;
+}
+
+.hero-links {
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+}
+
+.hero-links a {
+  display: flex;
+  align-items: center;
+  gap: 0.42rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  text-decoration: none;
+  border-bottom: 0.5px solid transparent;
+  padding-bottom: 1px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.hero-links a:hover { color: var(--olive); border-color: var(--olive-light); }
+.hero-links svg { flex-shrink: 0; }
+
+.scroll-cue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--olive-light);
+  text-decoration: none;
+  margin-top: 2rem;
+  animation: bob 2.4s ease-in-out infinite;
+  transition: color 0.2s;
+}
+
+.scroll-cue:hover { color: var(--olive); }
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); opacity: 0.5; }
+  50%       { transform: translateY(7px); opacity: 0.85; }
+}
+
+/* ===== SECTION COMMONS ===== */
+.section-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--olive);
+  margin-bottom: 2.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 0.5px;
+  background: var(--rule);
+}
+
+.content-section {
+  padding: 5rem 5vw;
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.alt-bg {
+  background: var(--cream-alt);
+  max-width: none;
+  padding: 5rem max(5vw, calc((100vw - var(--max-w)) / 2));
+}
+
+/* ===== FLOW TIMELINE (Journey) ===== */
+.journey-section {
+  padding: 5rem 5vw;
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.flow-timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.flow-node {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 0 1.8rem;
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.flow-node.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Spine: dot + vertical line */
+.flow-spine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0.55rem;
+}
+
+.flow-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--olive);
+  border: 2px solid var(--cream);
+  outline: 1.5px solid var(--olive);
+  flex-shrink: 0;
+  transition: background 0.3s;
+  z-index: 1;
+}
+
+.flow-dot--edu {
+  background: transparent;
+  outline-color: var(--olive-light);
+}
+
+.flow-line {
+  flex: 1;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--olive-light) 0%, transparent 100%);
+  margin-top: 4px;
+  min-height: 36px;
+}
+
+/* Content area */
+.flow-content {
+  padding-bottom: 2.8rem;
+}
+
+.flow-time {
+  display: block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  color: var(--olive);
+  margin-bottom: 0.3rem;
+}
+
+.flow-org {
+  font-family: 'Lora', serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 0.18rem;
+  line-height: 1.2;
+}
+
+.flow-org a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--olive-light);
+  padding-bottom: 1px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.flow-org a:hover { color: var(--olive); border-color: var(--olive); }
+
+.flow-role {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--ink-light);
+  letter-spacing: 0.02em;
+  margin-bottom: 0.65rem;
+}
+
+.flow-text {
+  font-size: 0.91rem;
+  color: var(--ink-mid);
+  line-height: 1.68;
+  max-width: 520px;
+}
+
+/* ===== PUBLICATIONS ===== */
+.pub-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.pub-card {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 3rem;
+  padding: 2.8rem 0;
+  border-top: 0.5px solid var(--rule);
+  align-items: center;
+}
+
+.pub-card:last-child { border-bottom: 0.5px solid var(--rule); }
+
+.pub-card.reverse { grid-template-columns: 1fr 340px; }
+
+.pub-visual {
+  background: var(--cream-alt);
+  border: 0.5px solid var(--rule);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.pub-venue {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--olive);
+  margin-bottom: 0.6rem;
+}
+
+.pub-text h3 {
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--ink);
+  margin-bottom: 0.75rem;
+}
+
+.pub-text h3 a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--olive-light);
+  padding-bottom: 1px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.pub-text h3 a:hover { color: var(--olive); border-color: var(--olive); }
+
+.pub-desc {
+  font-size: 0.9rem;
+  color: var(--ink-mid);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.pub-link {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--olive);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--olive-light);
+  padding-bottom: 1px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.pub-link:hover { color: var(--ink); border-color: var(--ink); }
+
+/* ===== PHOTOS SECTION ===== */
+.photos-section {
+  padding: 5rem max(5vw, calc((100vw - var(--max-w)) / 2));
+  background: var(--cream-alt);
+}
+
+.photo-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.tab-buttons {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.tab-btn {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: var(--ink-light);
+  background: transparent;
+  border: 0.5px solid var(--rule);
+  padding: 0.35rem 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tab-btn:hover { color: var(--olive); border-color: var(--olive-light); }
+
+.tab-btn.active {
+  color: var(--cream);
+  background: var(--olive);
+  border-color: var(--olive);
+}
+
+.tab-panels { position: relative; }
+
+.tab-panel {
+  display: none;
+  gap: 1.5rem;
+  flex-direction: column;
+}
+
+.tab-panel.active {
+  display: flex;
+  animation: fadeTab 0.4s ease;
+}
+
+@keyframes fadeTab {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.photo-frame {
+  border: 0.5px solid var(--rule);
+  border-radius: 2px;
+  overflow: hidden;
+  background: var(--olive-pale);
+  line-height: 0;
+}
+
+.photo-slot {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* To add a real photo: replace the SVG inside .photo-slot with:
+   <img src="your-photo.jpg" alt="description" style="width:100%;height:100%;object-fit:cover;"> */
+
+.photo-caption {
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 2.2rem max(5vw, calc((100vw - var(--max-w)) / 2));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+footer span {
+  font-family: 'Lora', serif;
+  font-size: 0.95rem;
+  color: var(--parchment);
+}
+
+.footer-links { display: flex; gap: 2rem; }
+
+.footer-links a {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--olive-light);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover { color: var(--cream); }
+
+/* ===== REVEAL ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 720px) {
+  .pub-card,
+  .pub-card.reverse {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .pub-card.reverse .pub-visual { order: -1; }
+
+  footer { flex-direction: column; align-items: flex-start; }
+}
