@@ -1,16 +1,5 @@
-/* =====================================================
-   ADHITYA VENKATRAMAN — main.js
-   ===================================================== */
 (function () {
   'use strict';
-
-  /* ============================================================
-     BACKGROUND CANVAS
-     - Many more dots (80)
-     - Lines always drawn between close pairs (no random skip)
-     - Cursor repels particles slowly and naturally
-     - Velocity damping so particles don't fly off
-  ============================================================ */
   const canvas = document.getElementById('bg-canvas');
   const ctx    = canvas.getContext('2d');
 
@@ -43,7 +32,6 @@
     }));
   }
 
-  /* Gentle sine-wave drift lines behind particles */
   let lineOffset = 0;
   function drawDriftLines() {
     const count = 4;
@@ -64,7 +52,6 @@
     ctx.globalAlpha = 1;
   }
 
-  /* Draw connections between every pair within threshold */
   function drawConnections() {
     for (let i = 0; i < nodes.length; i++) {
       for (let j = i + 1; j < nodes.length; j++) {
@@ -114,7 +101,6 @@
     drawNodes();
 
     nodes.forEach(n => {
-      /* Cursor repel */
       if (mouseX !== null) {
         const dx   = n.x - mouseX;
         const dy   = n.y - mouseY;
@@ -126,14 +112,12 @@
         }
       }
 
-      /* Damp & move */
       n.vx *= DAMPING;
       n.vy *= DAMPING;
       clampSpeed(n);
       n.x += n.vx;
       n.y += n.vy;
 
-      /* Wrap edges */
       if (n.x < -20)    n.x = W + 20;
       if (n.x > W + 20) n.x = -20;
       if (n.y < -20)    n.y = H + 20;
@@ -143,11 +127,9 @@
     animId = requestAnimationFrame(tick);
   }
 
-  /* Track mouse */
   window.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; });
   window.addEventListener('mouseleave', () => { mouseX = null; mouseY = null; });
 
-  /* Pause when hero off-screen */
   const heroEl = document.querySelector('.hero');
   new IntersectionObserver(entries => {
     if (entries[0].isIntersecting) {
@@ -169,9 +151,6 @@
   animId = requestAnimationFrame(tick);
 
 
-  /* ============================================================
-     FLOW TIMELINE — staggered entrance
-  ============================================================ */
   const flowNodes = document.querySelectorAll('.flow-node');
   const flowObs   = new IntersectionObserver(entries => {
     entries.forEach(e => {
@@ -186,9 +165,6 @@
   flowNodes.forEach(n => flowObs.observe(n));
 
 
-  /* ============================================================
-     GENERIC SCROLL REVEAL
-  ============================================================ */
   const revealEls = document.querySelectorAll('.pub-card, .photo-tabs');
   revealEls.forEach(el => {
     el.style.opacity = '0';
@@ -210,9 +186,6 @@
   revealEls.forEach(el => revealObs.observe(el));
 
 
-  /* ============================================================
-     PHOTO TABS
-  ============================================================ */
   const tabBtns   = document.querySelectorAll('.tab-btn');
   const tabPanels = document.querySelectorAll('.tab-panel');
 
