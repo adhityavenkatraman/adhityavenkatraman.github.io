@@ -22,9 +22,9 @@
     var BASE_SPEED = 0.3; // passive drift magnitude
 
     var PALETTE = [
-      { c: '#9BA89A', w: 8  }, { c: '#B8AE94', w: 8  }, { c: '#C4BBAA', w: 3  },
-      { c: '#7A8C5A', w: 8  }, { c: '#5C6B3E', w: 5  }, { c: '#A8B88A', w: 5  },
-      { c: '#8B7355', w: 5  }, { c: '#6B8A7A', w: 8  }, { c: '#8B6B6B', w: 8  },
+      { c: '#9BA89A', w: 5  }, { c: '#B8AE94', w: 5  }, { c: '#C4BBAA', w: 5  },
+      { c: '#7A8C5A', w: 12  }, { c: '#5C6B3E', w: 5  }, { c: '#A8B88A', w: 5  },
+      { c: '#8B7355', w: 5  }, { c: '#6B8A7A', w: 12  }, { c: '#8B6B6B', w: 12  },
       { c: '#7B8B9A', w: 4  }, { c: '#A89B6A', w: 4  }, { c: '#697A5A', w: 3  },
     ];
     var TOTAL_W = PALETTE.reduce(function(s, c) { return s + c.w; }, 0);
