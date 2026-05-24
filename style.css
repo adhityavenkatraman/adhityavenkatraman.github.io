@@ -137,7 +137,7 @@ h1 {
 
 .section-label {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.64rem;
+  font-size: 0.8rem;
   letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--olive);
@@ -298,7 +298,7 @@ h1 {
 
 .pub-venue {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.64rem;
+  font-size: 0.8rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--olive);
@@ -454,7 +454,7 @@ h1 {
 
 .panel-place {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.64rem;
+  font-size: 0.8rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--olive);
