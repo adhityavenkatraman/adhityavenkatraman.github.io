@@ -132,7 +132,7 @@
         var spd = Math.sqrt(n.vx * n.vx + n.vy * n.vy);
         if (spd > MAX_SPD) { n.vx = n.vx / spd * MAX_SPD; n.vy = n.vy / spd * MAX_SPD; }
 
-        // minimum speed so drift never dies
+        // enforce minimum speed so drift never dies
         if (spd < 0.18) {
           n.vx += n.driftX * 3;
           n.vy += n.driftY * 3;
@@ -207,7 +207,8 @@
 
   // ─── GLOBE ─────────────────────────────────────────────────────────────────
   //
-  // for fixing lat/lon - lat = latitude (N+), lon = longitude (E+)
+  // Edit LOCATIONS to match your photos.
+  // lat = latitude (N+), lon = longitude (E+)
   //
   function initGlobe() {
     var LOCATIONS = [
@@ -269,21 +270,27 @@
       popover.style.top  = top  + 'px';
     }
 
+    var loadGen = 0; // generation counter to discard stale image loads
+
     function renderPopover() {
       if (!activeLoc) return;
       popPlace.textContent = activeLoc.name;
       var src = activeLoc.photos[activePhotoIdx];
-      // swap image cleanly — fade out, set src, fade in
+
+      loadGen++;
+      var myGen = loadGen;
       popImg.style.opacity = '0';
+
       var img = new Image();
       img.onload = function() {
+        if (myGen !== loadGen) return; // stale load, discard
         popImg.src = src;
         popImg.style.opacity = '1';
       };
       img.onerror = function() {
-        // show broken image placeholder
+        if (myGen !== loadGen) return;
         popImg.src = src;
-        popImg.style.opacity = '0.4';
+        popImg.style.opacity = '0.35';
       };
       img.src = src;
 
@@ -301,7 +308,6 @@
         popThumbs.appendChild(t);
       });
 
-      // hide arrows if only one photo
       var multi = activeLoc.photos.length > 1;
       popPrev.style.display = multi ? '' : 'none';
       popNext.style.display = multi ? '' : 'none';
@@ -342,12 +348,12 @@
     }
 
     function latLonTo3D(lat, lon) {
-      var phi   = (90 - lat)  * Math.PI / 180;
-      var theta = (lon + 180) * Math.PI / 180;
+      var phi   = (90 - lat) * Math.PI / 180;
+      var theta = lon        * Math.PI / 180;
       return {
         x:  Math.sin(phi) * Math.cos(theta),
         y:  Math.cos(phi),
-        z:  Math.sin(phi) * Math.sin(theta)
+        z: -Math.sin(phi) * Math.sin(theta)
       };
     }
 
@@ -438,18 +444,30 @@
       gc.strokeStyle = '#8A8070';
       gc.lineWidth   = 0.7;
 
-      LAND.forEach(function(ring) {
+      // Project all vertices in this ring, then draw only visible segments.
+      // This prevents straight lines cutting across the sphere when a polygon
+      // straddles the front/back boundary.
+      LAND.forEach(function(ringPts) {
+        var pts = ringPts.map(function(ll) {
+          var p3 = latLonTo3D(ll[0], ll[1]);
+          var rp = rotatePoint(p3);
+          return { sx: cx + rp.x * R, sy: cy - rp.y * R, vis: rp.z > 0 };
+        });
+        var n = pts.length;
         gc.beginPath();
-        var started = false;
-        for (var i = 0; i < ring.length; i++) {
-          var pt = latLonTo3D(ring[i][0], ring[i][1]);
-          var rp = rotatePoint(pt);
-          if (rp.z < -0.02) { started = false; continue; } // behind globe
-          var sx = cx + rp.x * R, sy = cy - rp.y * R;
-          if (!started) { gc.moveTo(sx, sy); started = true; }
-          else           { gc.lineTo(sx, sy); }
+        var inPath = false;
+        for (var i = 0; i < n; i++) {
+          var cur  = pts[i];
+          var next = pts[(i + 1) % n];
+          if (cur.vis && next.vis) {
+            if (!inPath) { gc.moveTo(cur.sx, cur.sy); inPath = true; }
+            else          { gc.lineTo(cur.sx, cur.sy); }
+            gc.lineTo(next.sx, next.sy);
+          } else {
+            inPath = false;
+          }
         }
-        gc.closePath();
+        if (inPath) gc.closePath();
         gc.fill();
         gc.stroke();
       });
@@ -463,8 +481,8 @@
         gc.beginPath();
         var firstL = true;
         for (var lon = -180; lon <= 180; lon += 4) {
-          var theta = (lon + 180) * Math.PI / 180;
-          var rp = rotatePoint({ x: sinP * Math.cos(theta), y: cosP, z: sinP * Math.sin(theta) });
+          var theta = lon * Math.PI / 180;
+          var rp = rotatePoint({ x: sinP * Math.cos(theta), y: cosP, z: -sinP * Math.sin(theta) });
           if (rp.z < 0) { firstL = true; continue; }
           var sx = cx + rp.x * R, sy = cy - rp.y * R;
           firstL ? gc.moveTo(sx, sy) : gc.lineTo(sx, sy);
@@ -473,12 +491,12 @@
         gc.stroke();
       }
       for (var lon2 = -180; lon2 < 180; lon2 += 30) {
-        var theta2 = (lon2 + 180) * Math.PI / 180;
+        var theta2 = lon2 * Math.PI / 180;
         gc.beginPath();
         var firstL2 = true;
         for (var lat2 = -90; lat2 <= 90; lat2 += 3) {
           var phi2 = (90 - lat2) * Math.PI / 180;
-          var rp2 = rotatePoint({ x: Math.sin(phi2)*Math.cos(theta2), y: Math.cos(phi2), z: Math.sin(phi2)*Math.sin(theta2) });
+          var rp2 = rotatePoint({ x: Math.sin(phi2)*Math.cos(theta2), y: Math.cos(phi2), z: -Math.sin(phi2)*Math.sin(theta2) });
           if (rp2.z < 0) { firstL2 = true; continue; }
           var sx2 = cx + rp2.x * R, sy2 = cy - rp2.y * R;
           firstL2 ? gc.moveTo(sx2, sy2) : gc.lineTo(sx2, sy2);
