@@ -135,7 +135,6 @@
       animId = requestAnimationFrame(tick);
     });
 
-    // only run while hero is visible
     var hero = document.querySelector('.hero');
     if (hero && typeof IntersectionObserver !== 'undefined') {
       new IntersectionObserver(function(entries) {
@@ -187,10 +186,6 @@
 
 
   // ─── GLOBE ─────────────────────────────────────────────────────────────────
-  //
-  // Edit LOCATIONS to match your actual photos.
-  // lat = latitude (N positive), lon = longitude (E positive)
-  // photos = paths relative to index.html
   //
   function initGlobe() {
     var LOCATIONS = [
@@ -415,7 +410,7 @@
       spinV = dragVX * 0.4;
       if (Math.abs(spinV) < 0.0005) spinV = 0.002;
 
-      // click detection: only if barely moved
+      // click detection
       if (Math.abs(dragVX) < 0.004 && Math.abs(dragVY) < 0.004) {
         var rect = gc_el.getBoundingClientRect();
         var p = clientXY(e);
