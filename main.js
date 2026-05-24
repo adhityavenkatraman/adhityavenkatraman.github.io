@@ -19,7 +19,7 @@
 
     // increased base speed and repel force for more lively feel
     var CONNECT = 125, REPEL_R = 175, REPEL_F = 0.18, MAX_SPD = 1.4, DAMP = 0.980;
-    var BASE_SPEED = 0.7; // passive drift magnitude
+    var BASE_SPEED = 0.5; // passive drift magnitude
 
     var PALETTE = [
       { c: '#9BA89A', w: 8  }, { c: '#B8AE94', w: 8  }, { c: '#C4BBAA', w: 3  },
