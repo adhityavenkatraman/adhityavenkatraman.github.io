@@ -21,9 +21,9 @@
     var CONNECT = 125, REPEL_R = 175, REPEL_F = 0.14, MAX_SPD = 1.1, DAMP = 0.984;
 
     var PALETTE = [
-      { c: '#9BA89A', w: 12 }, { c: '#B8AE94', w: 12 }, { c: '#C4BBAA', w: 10 },
-      { c: '#7A8C5A', w: 8  }, { c: '#5C6B3E', w: 5  }, { c: '#A8B88A', w: 7  },
-      { c: '#8B7355', w: 6  }, { c: '#6B8A7A', w: 4  }, { c: '#8B6B6B', w: 3  },
+      { c: '#9BA89A', w: 8  }, { c: '#B8AE94', w: 8  }, { c: '#C4BBAA', w: 3  },
+      { c: '#7A8C5A', w: 8  }, { c: '#5C6B3E', w: 5  }, { c: '#A8B88A', w: 5  },
+      { c: '#8B7355', w: 5  }, { c: '#6B8A7A', w: 8  }, { c: '#8B6B6B', w: 8  },
       { c: '#7B8B9A', w: 4  }, { c: '#A89B6A', w: 4  }, { c: '#697A5A', w: 3  },
     ];
     var TOTAL_W = PALETTE.reduce(function(s, c) { return s + c.w; }, 0);
@@ -83,7 +83,7 @@
           if (dist < CONNECT) {
             ctx.beginPath();
             ctx.strokeStyle = '#9BA89A';
-            ctx.globalAlpha = (1 - dist / CONNECT) * 0.14;
+            ctx.globalAlpha = (1 - dist / CONNECT) * 0.5;
             ctx.lineWidth = 0.55;
             ctx.moveTo(nodes[i].x, nodes[i].y);
             ctx.lineTo(nodes[j].x, nodes[j].y);
