@@ -167,7 +167,7 @@ h1 {
 }
 
 .journey-section {
-  padding: 5rem 5vw;
+  padding: 5rem 5vw 2rem;
   max-width: var(--max-w);
   margin: 0 auto;
 }
@@ -286,8 +286,11 @@ h1 {
   align-items: center;
 }
 
+#research { padding-top: 2rem; }
+#research .pub-card:first-child { padding-top: 0.55rem; }
+
 .pub-card--no-visual { grid-template-columns: 1fr; max-width: 600px; }
-/*.pub-card:last-child { border-bottom: 0.5px solid var(--rule); }*/
+/*.pub-card:first-child { border-top: 0.5px solid var(--rule); }*/
 .pub-card.reverse { grid-template-columns: 1fr 300px; }
 .pub-card.reverse.pub-card--no-visual { grid-template-columns: 1fr; }
 
