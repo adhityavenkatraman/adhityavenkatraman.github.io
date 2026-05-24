@@ -137,7 +137,7 @@ h1 {
 
 .section-label {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--olive);
@@ -256,14 +256,14 @@ h1 {
 
 .flow-role {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: var(--ink-light);
   letter-spacing: 0.02em;
   margin-bottom: 0.65rem;
 }
 
 .flow-text {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: var(--ink-mid);
   line-height: 1.7;
   max-width: 520px;
