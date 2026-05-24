@@ -196,13 +196,14 @@
   //
   function initGlobe() {
     var LOCATIONS = [
-      { name: 'New York',    lat: 40.71, lon:  -74.01, photos: ['materials/images/IMG_3647.jpeg','materials/images/IMG_4373.jpeg'] },
-      { name: 'Bay Area',    lat: 37.77, lon: -122.42, photos: ['materials/images/IMG_0394.jpeg','materials/images/IMG_7274.jpeg','materials/images/IMG_0647.jpeg','materials/images/IMG_0629.jpeg'] },
-      { name: 'London',      lat: 51.51, lon:   -0.13, photos: ['materials/images/IMG_2590.jpeg'] },
-      { name: 'Chicago',     lat: 41.88, lon:  -87.63, photos: ['materials/images/IMG_4248.jpeg'] },
-      { name: 'Utah',        lat: 39.32, lon: -111.09, photos: ['materials/images/IMG_1277.jpeg'] },
-      { name: 'Tokyo',       lat: 35.68, lon:  139.69, photos: ['materials/images/IMG_3210.jpeg'] },
-      { name: 'Maharashtra', lat: 19.08, lon:   75.70, photos: ['materials/images/IMG_8206.jpeg'] },
+      { name: 'New York',    lat: 40.71, lon:  -74.01, photos: ['materials/images/madsq.jpeg','materials/images/raphael.jpeg','materials/images/cloister.jpeg','materials/images/subwaydog.jpeg'] },
+      { name: 'Bay Area',    lat: 37.77, lon: -122.42, photos: ['materials/images/jets.jpeg','materials/images/bixby.jpeg','materials/images/falls.jpeg','materials/images/trail.jpeg'] },
+      { name: 'London',      lat: 51.51, lon:   -0.13, photos: ['materials/images/bigben.jpeg'] },
+      { name: 'Chicago',     lat: 41.88, lon:  -87.63, photos: ['materials/images/chicagonight.jpeg'] },
+      { name: 'Utah',        lat: 39.32, lon: -111.09, photos: ['materials/images/arches.jpeg','materials/images/druid.jpeg'] },
+      { name: 'Tokyo',       lat: 35.68, lon:  139.69, photos: ['materials/images/pagoda.jpeg','materials/images/tower.jpeg'] },
+      { name: 'Indonesia',   lat: 35.68, lon:  139.69, photos: ['materials/images/statue.jpeg','materials/images/cliff.jpeg','materials/images/idflower.jpeg'] },
+      { name: 'Maharashtra', lat: 19.08, lon:   75.70, photos: ['materials/images/flowers.jpeg','materials/images/mountains.jpeg','materials/images/greenhouse.jpeg'] },
     ];
 
     var gc_el = document.getElementById('globe');
