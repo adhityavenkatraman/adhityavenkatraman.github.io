@@ -196,12 +196,12 @@
   //
   function initGlobe() {
     var LOCATIONS = [
-      { name: 'New York',    lat: 40.71, lon:  -74.01, photos: ['materials/images/3647.jpeg','materials/images/4373.jpeg'] },
+      { name: 'New York',    lat: 40.71, lon:  -74.01, photos: ['materials/images/IMG_3647.jpeg','materials/images/IMG_4373.jpeg'] },
       { name: 'Bay Area',    lat: 37.77, lon: -122.42, photos: ['materials/images/IMG_0394.jpeg','materials/images/IMG_7274.jpeg','materials/images/IMG_0647.jpeg','materials/images/IMG_0629.jpeg'] },
       { name: 'London',      lat: 51.51, lon:   -0.13, photos: ['materials/images/IMG_2590.jpeg'] },
       { name: 'Chicago',     lat: 41.88, lon:  -87.63, photos: ['materials/images/IMG_4248.jpeg'] },
       { name: 'Utah',        lat: 39.32, lon: -111.09, photos: ['materials/images/IMG_1277.jpeg'] },
-      { name: 'Tokyo',       lat: 35.68, lon:  139.69, photos: ['materials/images/3210.jpeg'] },
+      { name: 'Tokyo',       lat: 35.68, lon:  139.69, photos: ['materials/images/IMG_3210.jpeg'] },
       { name: 'Maharashtra', lat: 19.08, lon:   75.70, photos: ['materials/images/IMG_8206.jpeg'] },
     ];
 
