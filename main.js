@@ -194,13 +194,13 @@
   //
   function initGlobe() {
     var LOCATIONS = [
-      { name: 'New York',      lat: 40.71, lon:  -74.01, photos: ['materials/images/nyc1.jpg',      'materials/images/nyc2.jpg'] },
-      { name: 'San Francisco', lat: 37.77, lon: -122.42, photos: ['materials/images/sf1.jpg'] },
-      { name: 'Stanford',      lat: 37.43, lon: -122.17, photos: ['materials/images/stanford1.jpg', 'materials/images/stanford2.jpg'] },
-      { name: 'London',        lat: 51.51, lon:   -0.13, photos: ['materials/images/london1.jpg'] },
-      { name: 'Tokyo',         lat: 35.68, lon:  139.69, photos: ['materials/images/tokyo1.jpg',    'materials/images/tokyo2.jpg'] },
-      { name: 'Mumbai',        lat: 19.08, lon:   72.88, photos: ['materials/images/mumbai1.jpg'] },
-      { name: 'Paris',         lat: 48.85, lon:    2.35, photos: ['materials/images/paris1.jpg'] },
+      { name: 'New York',      lat: 40.71, lon:  -74.01, photos: ['materials/images/3647.JPEG','materials/images/4373.JPEG'] },
+      { name: 'Bay Area', lat: 37.77, lon: -122.42, photos: ['materials/images/IMG_0394.JPEG', 'materials/images/IMG_7274.JPEG', 'materials/images/IMG_0647.JPEG',  'materials/images/IMG_0629.JPEG'] },
+      { name: 'London',        lat: 51.51, lon:   -0.13, photos: ['materials/images/IMG_2590.JPEG'] },
+      { name: 'Chicago',        lat: 37.77, lon:   -110, photos: ['materials/images/IMG_4248.JPEG'] },
+      { name: 'Utah', lat: 37.77, lon: -122.42, photos: ['materials/images/IMG_1277.JPEG'] },
+      { name: 'Tokyo',         lat: 35.68, lon:  139.69, photos: ['materials/images/3210.JPEG'] },
+      { name: 'Maharashtra',        lat: 19.08, lon:   72.88, photos: ['materials/images/IMG_8206.JPEG'] },
     ];
 
     var gc_el = document.getElementById('globe');
