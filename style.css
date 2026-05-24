@@ -281,13 +281,13 @@ h1 {
   display: grid;
   grid-template-columns: 300px 1fr;
   gap: 3rem;
-  padding: 2.8rem 0;
+  padding: 2.5rem 0;
   border-bottom: 0.5px solid var(--rule);
   align-items: center;
 }
 
 #research { padding-top: 2rem; }
-#research .pub-card:first-child { padding-top: 0.55rem; }
+#research .pub-card:first-child { padding-top: 0.2rem; }
 
 .pub-card--no-visual { grid-template-columns: 1fr; max-width: 600px; }
 /*.pub-card:first-child { border-top: 0.5px solid var(--rule); }*/
