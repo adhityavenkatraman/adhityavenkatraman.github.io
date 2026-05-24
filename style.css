@@ -256,14 +256,14 @@ h1 {
 
 .flow-role {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: var(--ink-light);
   letter-spacing: 0.02em;
   margin-bottom: 0.65rem;
 }
 
 .flow-text {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: var(--ink-mid);
   line-height: 1.7;
   max-width: 520px;
