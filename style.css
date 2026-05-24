@@ -372,6 +372,7 @@ h1 {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.62rem;
   letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: var(--ink-light);
   opacity: 0.55;
   text-align: center;
