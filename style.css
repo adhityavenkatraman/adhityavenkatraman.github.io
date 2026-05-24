@@ -349,17 +349,13 @@ h1 {
   padding: 5rem max(5vw, calc((100vw - var(--max-w)) / 2));
 }
 
-.globe-layout {
-  display: grid;
-  grid-template-columns: 1fr 280px;
-  gap: 2rem;
-  align-items: start;
-}
-
 .globe-wrap {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  align-items: center;
+  gap: 0.7rem;
+  max-width: 580px;
+  margin: 0 auto;
 }
 
 #globe {
@@ -377,117 +373,123 @@ h1 {
   font-size: 0.62rem;
   letter-spacing: 0.1em;
   color: var(--ink-light);
-  opacity: 0.6;
+  opacity: 0.55;
   text-align: center;
 }
 
-.photo-panel {
-  position: sticky;
-  top: 2rem;
-  min-height: 320px;
+/* floating popover */
+.globe-popover {
+  position: fixed;
+  z-index: 200;
+  width: 240px;
+  background: var(--cream);
   border: 0.5px solid var(--rule);
-  border-radius: 2px;
-  background: var(--cream);
+  border-radius: 3px;
+  box-shadow: 0 8px 32px rgba(34,40,15,0.18);
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  animation: popIn 0.22s ease;
 }
 
-.photo-panel-empty {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.65rem;
-  letter-spacing: 0.12em;
-  color: var(--parchment);
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.95) translateY(4px); }
+  to   { opacity: 1; transform: scale(1)    translateY(0); }
 }
 
-.photo-panel-content {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  animation: panelIn 0.3s ease;
-  position: relative;
-}
-
-@keyframes panelIn {
-  from { opacity: 0; transform: translateX(10px); }
-  to   { opacity: 1; transform: translateX(0); }
-}
-
-.photo-panel-close {
+.pop-close {
   position: absolute;
-  top: 0.6rem;
-  right: 0.6rem;
+  top: 0.45rem;
+  right: 0.45rem;
   z-index: 2;
-  background: var(--cream);
+  background: rgba(245,239,224,0.85);
   border: 0.5px solid var(--rule);
   color: var(--ink-light);
-  width: 26px;
-  height: 26px;
+  width: 22px;
+  height: 22px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   border-radius: 1px;
-  transition: color 0.2s;
+  transition: color 0.15s;
 }
 
-.photo-panel-close:hover { color: var(--olive); }
+.pop-close:hover { color: var(--olive); }
 
-.panel-img-wrap {
+.pop-place {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--olive);
+  padding: 0.6rem 0.75rem 0.35rem;
+}
+
+.pop-img-wrap {
+  position: relative;
   width: 100%;
-  aspect-ratio: 4/3;
-  overflow: hidden;
+  aspect-ratio: 3 / 4;
   background: var(--olive-pale);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.panel-img-wrap img {
+.pop-img-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: opacity 0.25s;
 }
 
-.panel-place {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.8rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--olive);
-  padding: 0.7rem 0.9rem 0.4rem;
-}
-
-.panel-thumbs {
+.pop-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(245,239,224,0.8);
+  border: 0.5px solid var(--rule);
+  color: var(--ink-mid);
+  font-size: 1.2rem;
+  line-height: 1;
+  width: 26px;
+  height: 34px;
   display: flex;
-  gap: 0.4rem;
-  padding: 0.4rem 0.9rem 0.9rem;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 1px;
+  z-index: 2;
+  transition: background 0.15s, color 0.15s;
+}
+
+.pop-arrow:hover { background: var(--cream); color: var(--olive); }
+.pop-prev { left: 0.3rem; }
+.pop-next { right: 0.3rem; }
+
+.pop-thumbs {
+  display: flex;
+  gap: 0.35rem;
+  padding: 0.45rem 0.6rem 0.6rem;
   flex-wrap: wrap;
 }
 
-.panel-thumb {
-  width: 52px;
-  height: 38px;
+.pop-thumb {
+  width: 44px;
+  height: 58px;   /* 3:4 ratio */
   object-fit: cover;
   border: 1.5px solid transparent;
   border-radius: 1px;
   cursor: pointer;
-  opacity: 0.65;
-  transition: opacity 0.2s, border-color 0.2s;
+  opacity: 0.6;
+  transition: opacity 0.15s, border-color 0.15s;
 }
 
-.panel-thumb.active,
-.panel-thumb:hover {
+.pop-thumb.active,
+.pop-thumb:hover {
   opacity: 1;
   border-color: var(--olive);
-}
-
-@media (max-width: 720px) {
-  .globe-layout { grid-template-columns: 1fr; }
-  .photo-panel  { position: static; min-height: 260px; }
 }
 
 footer {
