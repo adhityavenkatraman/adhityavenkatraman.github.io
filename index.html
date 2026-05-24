@@ -42,9 +42,13 @@
   </div>
 </section>
 
+<!-- =========================================================
+     section id="background" — rename this to whatever you want
+     it to say in the URL, e.g. id="about" or id="cv"
+     ========================================================= -->
 <section id="background" class="journey-section">
   <div class="journey-inner">
-    <h2 class="section-label">About</h2>
+    <h2 class="section-label">Background</h2>
     <div class="flow-timeline">
 
       <div class="flow-node" data-index="0">
@@ -93,9 +97,9 @@
   <h2 class="section-label">Research</h2>
   <div class="pub-grid">
 
-    <article class="pub-card">
+    <article class="pub-card pub-card--no-visual">
+      <!--
       <div class="pub-visual" aria-hidden="true">
-        <!-- marginal effects chart — declining estimate with wide fanning CI -->
         <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
           <defs>
             <linearGradient id="cifill1" x1="0" y1="0" x2="1" y2="0">
@@ -114,6 +118,7 @@
           </g>
         </svg>
       </div>
+      -->
       <div class="pub-text">
         <p class="pub-venue">Public Choice &middot; 2025</p>
         <h3><a href="https://link.springer.com/article/10.1007/s11127-025-01347-5" target="_blank" rel="noopener">Dead Money: Measuring the Influence of Representatives on Post-Passage Appropriations</a></h3>
@@ -122,130 +127,24 @@
       </div>
     </article>
 
-    <article class="pub-card reverse">
+    <article class="pub-card reverse pub-card--no-visual">
       <div class="pub-text">
         <p class="pub-venue">Working Paper</p>
         <h3><a href="https://avenkatraman22.medium.com/headline-and-twitter-data-based-sentiment-and-topic-analysis-c539f188fe5b" target="_blank" rel="noopener">Political Polarization and Congressional Discourse: Evidence from Twitter</a></h3>
         <p class="pub-desc">Applies NLP to Congressional Twitter activity to measure ideological tone over time. Documents structural shift toward partisan signaling and away from cross-aisle engagement.</p>
         <a href="https://avenkatraman22.medium.com/headline-and-twitter-data-based-sentiment-and-topic-analysis-c539f188fe5b" target="_blank" rel="noopener" class="pub-link">Read →</a>
       </div>
+      <!--
       <div class="pub-visual" aria-hidden="true">
-        <!-- polarity vs subjectivity scatter — red Breitbart spreads wide, blue NYT clusters center -->
         <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
-          <defs>
-            <clipPath id="clip2"><rect x="0" y="0" width="300" height="200"/></clipPath>
-          </defs>
+          <defs><clipPath id="clip2"><rect x="0" y="0" width="300" height="200"/></clipPath></defs>
           <rect width="300" height="200" fill="#EDE5CF"/>
           <g clip-path="url(#clip2)">
-            <circle cx="12"  cy="4"   r="5.5" fill="#C0392B" opacity="0.68"/>
-            <circle cx="38"  cy="3"   r="4"   fill="#C0392B" opacity="0.58"/>
-            <circle cx="60"  cy="4"   r="5"   fill="#C0392B" opacity="0.63"/>
-            <circle cx="82"  cy="3"   r="3.5" fill="#C0392B" opacity="0.52"/>
-            <circle cx="104" cy="4"   r="5"   fill="#C0392B" opacity="0.67"/>
-            <circle cx="126" cy="3"   r="4.5" fill="#C0392B" opacity="0.60"/>
-            <circle cx="148" cy="4"   r="4"   fill="#C0392B" opacity="0.56"/>
-            <circle cx="170" cy="3"   r="5"   fill="#C0392B" opacity="0.65"/>
-            <circle cx="192" cy="4"   r="4.5" fill="#C0392B" opacity="0.69"/>
-            <circle cx="214" cy="3"   r="4"   fill="#C0392B" opacity="0.58"/>
-            <circle cx="236" cy="4"   r="5"   fill="#C0392B" opacity="0.63"/>
-            <circle cx="258" cy="3"   r="4"   fill="#C0392B" opacity="0.58"/>
-            <circle cx="280" cy="4"   r="5"   fill="#C0392B" opacity="0.66"/>
-            <circle cx="298" cy="3"   r="4.5" fill="#C0392B" opacity="0.60"/>
-            <circle cx="144" cy="4"   r="4.5" fill="#2980B9" opacity="0.65"/>
-            <circle cx="166" cy="3"   r="4"   fill="#2980B9" opacity="0.60"/>
-            <circle cx="188" cy="4"   r="5"   fill="#2980B9" opacity="0.68"/>
-            <circle cx="210" cy="3"   r="3.5" fill="#2980B9" opacity="0.56"/>
-
-            <circle cx="18"  cy="28"  r="5"   fill="#C0392B" opacity="0.66"/>
-            <circle cx="42"  cy="40"  r="4.5" fill="#C0392B" opacity="0.60"/>
-            <circle cx="65"  cy="24"  r="5.5" fill="#C0392B" opacity="0.68"/>
-            <circle cx="87"  cy="47"  r="4"   fill="#C0392B" opacity="0.63"/>
-            <circle cx="110" cy="32"  r="5.5" fill="#C0392B" opacity="0.70"/>
-            <circle cx="130" cy="20"  r="4"   fill="#C0392B" opacity="0.58"/>
-            <circle cx="152" cy="44"  r="5"   fill="#C0392B" opacity="0.66"/>
-            <circle cx="172" cy="28"  r="4.5" fill="#C0392B" opacity="0.63"/>
-            <circle cx="190" cy="38"  r="5.5" fill="#C0392B" opacity="0.70"/>
-            <circle cx="210" cy="22"  r="4"   fill="#C0392B" opacity="0.58"/>
-            <circle cx="230" cy="50"  r="5"   fill="#C0392B" opacity="0.66"/>
-            <circle cx="250" cy="30"  r="4.5" fill="#C0392B" opacity="0.63"/>
-            <circle cx="270" cy="42"  r="5"   fill="#C0392B" opacity="0.68"/>
-            <circle cx="290" cy="26"  r="4.5" fill="#C0392B" opacity="0.62"/>
-            <circle cx="140" cy="34"  r="5.5" fill="#2980B9" opacity="0.70"/>
-            <circle cx="158" cy="22"  r="5"   fill="#2980B9" opacity="0.66"/>
-            <circle cx="176" cy="44"  r="6"   fill="#2980B9" opacity="0.73"/>
-            <circle cx="194" cy="28"  r="5"   fill="#2980B9" opacity="0.68"/>
-            <circle cx="212" cy="42"  r="5.5" fill="#2980B9" opacity="0.66"/>
-            <circle cx="232" cy="30"  r="5"   fill="#2980B9" opacity="0.63"/>
-            <circle cx="250" cy="40"  r="4.5" fill="#2980B9" opacity="0.60"/>
-
-            <circle cx="44"  cy="72"  r="5.5" fill="#C0392B" opacity="0.68"/>
-            <circle cx="65"  cy="86"  r="5"   fill="#C0392B" opacity="0.63"/>
-            <circle cx="84"  cy="66"  r="5.5" fill="#C0392B" opacity="0.70"/>
-            <circle cx="104" cy="82"  r="5"   fill="#C0392B" opacity="0.66"/>
-            <circle cx="122" cy="70"  r="5.5" fill="#C0392B" opacity="0.70"/>
-            <circle cx="140" cy="88"  r="5"   fill="#C0392B" opacity="0.66"/>
-            <circle cx="158" cy="72"  r="6"   fill="#C0392B" opacity="0.73"/>
-            <circle cx="176" cy="62"  r="5"   fill="#C0392B" opacity="0.66"/>
-            <circle cx="194" cy="84"  r="5.5" fill="#C0392B" opacity="0.70"/>
-            <circle cx="212" cy="68"  r="5"   fill="#C0392B" opacity="0.66"/>
-            <circle cx="230" cy="86"  r="5.5" fill="#C0392B" opacity="0.70"/>
-            <circle cx="248" cy="70"  r="5"   fill="#C0392B" opacity="0.63"/>
-            <circle cx="268" cy="82"  r="5.5" fill="#C0392B" opacity="0.68"/>
-            <circle cx="285" cy="70"  r="5"   fill="#C0392B" opacity="0.63"/>
-            <circle cx="134" cy="76"  r="6"   fill="#2980B9" opacity="0.76"/>
-            <circle cx="152" cy="90"  r="5.5" fill="#2980B9" opacity="0.72"/>
-            <circle cx="170" cy="66"  r="6.5" fill="#2980B9" opacity="0.78"/>
-            <circle cx="188" cy="84"  r="6"   fill="#2980B9" opacity="0.74"/>
-            <circle cx="206" cy="70"  r="5.5" fill="#2980B9" opacity="0.70"/>
-            <circle cx="224" cy="86"  r="6"   fill="#2980B9" opacity="0.72"/>
-            <circle cx="242" cy="73"  r="5"   fill="#2980B9" opacity="0.66"/>
-            <circle cx="260" cy="60"  r="5.5" fill="#2980B9" opacity="0.63"/>
-
-            <circle cx="66"  cy="114" r="5.5" fill="#C0392B" opacity="0.68"/>
-            <circle cx="84"  cy="126" r="5"   fill="#C0392B" opacity="0.63"/>
-            <circle cx="102" cy="110" r="5.5" fill="#C0392B" opacity="0.70"/>
-            <circle cx="120" cy="122" r="5.5" fill="#C0392B" opacity="0.68"/>
-            <circle cx="138" cy="112" r="6"   fill="#C0392B" opacity="0.73"/>
-            <circle cx="156" cy="128" r="5.5" fill="#C0392B" opacity="0.70"/>
-            <circle cx="174" cy="114" r="6"   fill="#C0392B" opacity="0.73"/>
-            <circle cx="192" cy="126" r="5.5" fill="#C0392B" opacity="0.70"/>
-            <circle cx="210" cy="112" r="5.5" fill="#C0392B" opacity="0.68"/>
-            <circle cx="228" cy="122" r="5"   fill="#C0392B" opacity="0.63"/>
-            <circle cx="246" cy="110" r="5.5" fill="#C0392B" opacity="0.66"/>
-            <circle cx="264" cy="124" r="4.5" fill="#C0392B" opacity="0.60"/>
-            <circle cx="144" cy="120" r="6.5" fill="#2980B9" opacity="0.80"/>
-            <circle cx="162" cy="132" r="6"   fill="#2980B9" opacity="0.76"/>
-            <circle cx="180" cy="112" r="7"   fill="#2980B9" opacity="0.82"/>
-            <circle cx="198" cy="128" r="6"   fill="#2980B9" opacity="0.76"/>
-            <circle cx="216" cy="116" r="6.5" fill="#2980B9" opacity="0.78"/>
-            <circle cx="234" cy="130" r="5.5" fill="#2980B9" opacity="0.70"/>
-            <circle cx="252" cy="118" r="6"   fill="#2980B9" opacity="0.72"/>
-
-            <circle cx="106" cy="154" r="5"   fill="#C0392B" opacity="0.66"/>
-            <circle cx="124" cy="166" r="5.5" fill="#C0392B" opacity="0.70"/>
-            <circle cx="142" cy="152" r="6"   fill="#C0392B" opacity="0.73"/>
-            <circle cx="160" cy="164" r="5.5" fill="#C0392B" opacity="0.70"/>
-            <circle cx="178" cy="154" r="6"   fill="#C0392B" opacity="0.73"/>
-            <circle cx="196" cy="166" r="5.5" fill="#C0392B" opacity="0.70"/>
-            <circle cx="214" cy="155" r="5"   fill="#C0392B" opacity="0.66"/>
-            <circle cx="232" cy="162" r="4.5" fill="#C0392B" opacity="0.60"/>
-            <circle cx="150" cy="160" r="6"   fill="#2980B9" opacity="0.76"/>
-            <circle cx="168" cy="172" r="5.5" fill="#2980B9" opacity="0.72"/>
-            <circle cx="186" cy="155" r="6.5" fill="#2980B9" opacity="0.78"/>
-            <circle cx="204" cy="167" r="5.5" fill="#2980B9" opacity="0.72"/>
-            <circle cx="222" cy="156" r="5"   fill="#2980B9" opacity="0.66"/>
-
-            <circle cx="148" cy="185" r="5"   fill="#C0392B" opacity="0.70"/>
-            <circle cx="163" cy="194" r="4.5" fill="#C0392B" opacity="0.66"/>
-            <circle cx="178" cy="186" r="5.5" fill="#C0392B" opacity="0.73"/>
-            <circle cx="193" cy="195" r="4.5" fill="#C0392B" opacity="0.66"/>
-            <circle cx="136" cy="192" r="4"   fill="#C0392B" opacity="0.56"/>
-            <circle cx="164" cy="190" r="5.5" fill="#2980B9" opacity="0.74"/>
-            <circle cx="180" cy="197" r="5"   fill="#2980B9" opacity="0.70"/>
-            <circle cx="196" cy="186" r="5.5" fill="#2980B9" opacity="0.72"/>
+            <!-- scatter dots omitted for brevity — restore by removing these comment tags -->
           </g>
         </svg>
       </div>
+      -->
     </article>
 
   </div>
