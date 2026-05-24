@@ -256,7 +256,7 @@ h1 {
 
 .flow-role {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.66rem;
+  font-size: 0.75rem;
   color: var(--ink-light);
   letter-spacing: 0.02em;
   margin-bottom: 0.65rem;
