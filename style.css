@@ -368,6 +368,11 @@ h1 {
   cursor: grab;
   border-radius: 50%;
   display: block;
+  background:
+    radial-gradient(circle at 30% 30%, #e9e0cf 0%, #d4c6a8 45%, #b4a485 100%);
+  box-shadow:
+    inset -28px -28px 60px rgba(0,0,0,0.18),
+    inset 14px 14px 22px rgba(255,255,255,0.08);
 }
 
 #globe:active { cursor: grabbing; }
