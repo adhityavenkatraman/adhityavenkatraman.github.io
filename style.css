@@ -121,14 +121,14 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--olive-light);
+  color: var(--olive);
   text-decoration: none;
   margin-top: 1.8rem;
   animation: bob 2.4s ease-in-out infinite;
   transition: color 0.2s;
 }
 
-.scroll-cue:hover { color: var(--olive); }
+.scroll-cue:hover { color: var(--ink); }
 
 @keyframes bob {
   0%, 100% { transform: translateY(0); opacity: 0.5; }
