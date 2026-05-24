@@ -201,9 +201,9 @@
       { name: 'London',      lat: 51.51, lon:   -0.13, photos: ['materials/images/bigben.jpeg'] },
       { name: 'Chicago',     lat: 41.88, lon:  -87.63, photos: ['materials/images/chicagonight.jpeg'] },
       { name: 'Utah',        lat: 39.32, lon: -111.09, photos: ['materials/images/arches.jpeg','materials/images/druid.jpeg'] },
-      { name: 'Tokyo',       lat: 35.68, lon:  139.69, photos: ['materials/images/pagoda.jpeg','materials/images/tower.jpeg'] },
-      { name: 'Indonesia',   lat: 35.68, lon:  139.69, photos: ['materials/images/statue.jpeg','materials/images/cliff.jpeg','materials/images/idflower.jpeg'] },
-      { name: 'Maharashtra', lat: 19.08, lon:   75.70, photos: ['materials/images/flowers.jpeg','materials/images/mountains.jpeg','materials/images/greenhouse.jpeg'] },
+      { name: 'Japan',       lat: 35.68, lon:  139.69, photos: ['materials/images/pagoda.jpeg','materials/images/tower.jpeg'] },
+      { name: 'Indonesia',   lat: -4, lon:  106.82, photos: ['materials/images/statue.jpeg','materials/images/cliff.jpeg','materials/images/idflower.jpeg'] },
+      { name: 'India', lat: 19.08, lon:   75.70, photos: ['materials/images/flowers.jpeg','materials/images/mountains.jpeg','materials/images/greenhouse.jpeg'] },
     ];
 
     var gc_el = document.getElementById('globe');
