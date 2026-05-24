@@ -229,8 +229,9 @@ h1 {
 .flow-time {
   display: block;
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.9rem;
-  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: var(--olive);
   margin-bottom: 0.3rem;
 }
@@ -256,9 +257,10 @@ h1 {
 
 .flow-role {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: var(--ink-light);
-  letter-spacing: 0.02em;
   margin-bottom: 0.65rem;
 }
 
@@ -267,6 +269,7 @@ h1 {
   color: var(--ink-mid);
   line-height: 1.7;
   max-width: 520px;
+  margin-bottom: 1rem;
 }
 
 .pub-grid {
@@ -298,8 +301,8 @@ h1 {
 
 .pub-venue {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.9rem;
-  letter-spacing: 0.14em;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--olive);
   margin-bottom: 0.6rem;
@@ -328,12 +331,13 @@ h1 {
   font-size: 0.9rem;
   color: var(--ink-mid);
   line-height: 1.7;
+  max-width: 520px;
   margin-bottom: 1rem;
 }
 
 .pub-link {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--olive);
