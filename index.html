@@ -255,31 +255,29 @@
   </div>
 </section>
 
-<!-- photos — images live in materials/images/ in the repo -->
+<!-- globe — pins + images defined in LOCATIONS array in main.js -->
 <section id="photos" class="photos-section alt-bg">
-  <h2 class="section-label">Photos</h2>
-  <div class="photo-scroller-wrap">
-    <button class="scroller-arrow scroller-prev" aria-label="Previous">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
-    </button>
-    <div class="photo-scroller" id="photoScroller">
-      <div class="photo-slide">
-        <img src="materials/images/photo1.jpg" alt="">
+  <h2 class="section-label">Places</h2>
+  <div class="globe-layout">
+    <div class="globe-wrap">
+      <canvas id="globe" aria-label="Interactive globe with photo locations"></canvas>
+      <p class="globe-hint">drag to rotate &nbsp;·&nbsp; click a pin to view</p>
+    </div>
+    <div class="photo-panel" id="photoPanel">
+      <div class="photo-panel-empty" id="photoPanelEmpty">
+        <span>select a location</span>
       </div>
-      <div class="photo-slide">
-        <img src="materials/images/photo2.jpg" alt="">
-      </div>
-      <div class="photo-slide">
-        <img src="materials/images/photo3.jpg" alt="">
-      </div>
-      <div class="photo-slide">
-        <img src="materials/images/photo4.jpg" alt="">
+      <div class="photo-panel-content" id="photoPanelContent" hidden>
+        <button class="photo-panel-close" id="photoPanelClose" aria-label="Close">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+        <div class="panel-img-wrap">
+          <img id="panelImg" src="" alt="">
+        </div>
+        <p class="panel-place" id="panelPlace"></p>
+        <div class="panel-thumbs" id="panelThumbs"></div>
       </div>
     </div>
-    <button class="scroller-arrow scroller-next" aria-label="Next">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
-    </button>
-    <div class="scroller-dots" id="scrollerDots"></div>
   </div>
 </section>
 
