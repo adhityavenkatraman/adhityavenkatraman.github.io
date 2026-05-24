@@ -229,7 +229,7 @@ h1 {
 .flow-time {
   display: block;
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   letter-spacing: 0.08em;
   color: var(--olive);
   margin-bottom: 0.3rem;
@@ -256,7 +256,7 @@ h1 {
 
 .flow-role {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: var(--ink-light);
   letter-spacing: 0.02em;
   margin-bottom: 0.65rem;
