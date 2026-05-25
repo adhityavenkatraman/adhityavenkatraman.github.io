@@ -229,7 +229,7 @@
 
     // ── Coordinate conversion ──────────────────────────────────────────────
     // Standard spherical: phi = polar angle from north pole, theta = azimuth.
-    // We use a right-handed system where:
+    // Right-handed system where:
     //   x = sin(phi)*cos(theta)  → points toward lon=0 (prime meridian) on equator
     //   y = cos(phi)             → points north
     //   z = sin(phi)*sin(theta)  → points toward lon=90E on equator
